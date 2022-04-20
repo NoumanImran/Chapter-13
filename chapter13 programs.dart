@@ -201,4 +201,50 @@ class Problem {
   
 _________________________________________________________________________________
 
-//13.10  
+//13.13 + 13.14
+  
+main() {
+  Travel travel = Travel();
+  travel.get();
+  travel.printDetails();
+  print('');
+
+  Travel travel2 = Travel();
+  travel2.get();
+  travel2.printDetails();
+
+  print('');
+  travel.add(travel2);
+}
+
+//Class 
+
+class Travel {
+  late int kilo;
+  late int hours;
+
+  Travel() {
+    kilo = 0;
+    hours = 0;
+  }
+
+  get() {
+    print('Kilometers:');
+    kilo = int.parse(stdin.readLineSync()!);
+    print('\nHours:');
+    hours = int.parse(stdin.readLineSync()!);
+  }
+
+  printDetails() {
+    print("Kilometers = $kilo , Hours = $hours");
+  }
+
+  add(Travel t) {
+    int totalkilo = kilo + t.kilo;
+    int totalhours = hours + t.hours;
+    print('Total kilometers = $totalkilo , Total Hours = $totalhours');
+    return t;
+  }
+}
+
+_________________________________________________________________________________
